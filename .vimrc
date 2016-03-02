@@ -114,10 +114,7 @@ if has('win32') || has('win64')
 endif
 "set number                                                   " Add line numbers
 
-
-if !isdirectory("~/.tmp")
-    call mkdir("~/.tmp", "p")
-endif
+silent !mkdir ~/.vim_backup > /dev/null 2>&1
 
 set backupdir=~/.tmp                                         " Set backup folder
 set undodir=~/.tmp                                             " Set undo folder

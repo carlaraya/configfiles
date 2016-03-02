@@ -195,5 +195,7 @@ nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 " Move to nerdtree (assuming it's in leftmost)
 " nnoremap <silent> <leader><Space> <C-w>50h
 
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+
 " https://github.com/qpkorr/vim-bufkill
 nnoremap :BD <leader>bd

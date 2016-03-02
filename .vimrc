@@ -113,6 +113,12 @@ if has('win32') || has('win64')
     au GUIEnter * simalt ~x                            " Start vim on fullscreen
 endif
 "set number                                                   " Add line numbers
+
+
+if !isdirectory("~/.tmp")
+    call mkdir("~/.tmp", "p")
+endif
+
 set backupdir=~/.tmp                                         " Set backup folder
 set undodir=~/.tmp                                             " Set undo folder
 set linebreak           " use 'breakat' characters instead of just the last char

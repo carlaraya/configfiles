@@ -16,6 +16,8 @@
 
 [core]
     deltop = reset --hard HEAD^
-	excludesfile = /home/icecream/.gitignore_global
+	excludesfile = /home/carl/.gitignore_global
 [push]
 	default = simple
+[http]
+[https]

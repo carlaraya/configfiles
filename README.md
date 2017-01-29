@@ -15,4 +15,4 @@ Includes:
 2. Run the install.sh file.
 
     `bash install.sh`
-3. Type `:PluginInstall` in vim.
+3. That's it! Good luck, future me!

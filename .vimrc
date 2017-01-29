@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'qpkorr/vim-bufkill'
+Plugin 'leafgarland/typescript-vim.git'
 
 call vundle#end()
 filetype plugin indent on 
@@ -143,12 +144,17 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType haml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
 
+" CtrlP options
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 let g:ctrlp_root_markers = ['Gemfile']
+set wildignore+=*/node_modules/*,*/tmp/*
 
+" None of that
+set nohlsearch
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""MY REMAPS"""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -160,6 +166,24 @@ nnoremap <silent> <S-Tab> :bprevious<Enter>
 " Just do i<c-c>293+618<enter>, for example hehe (and type :help function-list
 " to get help with your functions
 inoremap <silent> <C-C> <C-R>=string(eval(input("Calculate: ")))<CR>
+
+" virtual tabstops using spaces
+set shiftwidth=4
+set softtabstop=4
+se expandtab
+" allow toggling between local and default mode
+function TabToggler()
+  if &expandtab
+    set shiftwidth=8
+    set softtabstop=0
+    set noexpandtab
+  else
+    set shiftwidth=4
+    set softtabstop=4
+    set expandtab
+  endif
+endfunction
+nmap <F9> mz:execute TabToggler()<CR>'z
 
 " Use comma as mapleader instead of backward slash
 let mapleader = ","
@@ -176,7 +200,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Remove the red highlights
+" Remove the highlights
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Arrow keys to change window size

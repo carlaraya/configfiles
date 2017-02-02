@@ -141,7 +141,7 @@ set autochdir   " Automatically set working directory to be same as current file
 autocmd VimEnter * if argc() | wincmd p | endif
 
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType haml setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType typescript setlocal shiftwidth=2 tabstop=2

@@ -12,6 +12,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'qpkorr/vim-bufkill'
 Plugin 'leafgarland/typescript-vim.git'
+Plugin 'tpope/vim-rails'
+Plugin 'pangloss/vim-javascript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+Plugin 'digitaltoad/vim-pug.git'
+
 
 call vundle#end()
 filetype plugin indent on 
@@ -140,11 +145,13 @@ set autochdir   " Automatically set working directory to be same as current file
 "autocmd vimenter * NERDTree
 autocmd VimEnter * if argc() | wincmd p | endif
 
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
-autocmd FileType haml setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+autocmd FileType haml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2
+autocmd FileType pug setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 " CtrlP options
 let g:ctrlp_map = '<c-p>'
@@ -155,6 +162,14 @@ set wildignore+=*/node_modules/*,*/tmp/*
 
 " None of that
 set nohlsearch
+
+let fortran_free_source=1
+let fortran_have_tabs=1
+let fortran_more_precise=1
+let fortran_do_enddo=1
+
+set nomodeline
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""MY REMAPS"""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,7 +185,7 @@ inoremap <silent> <C-C> <C-R>=string(eval(input("Calculate: ")))<CR>
 " virtual tabstops using spaces
 set shiftwidth=4
 set softtabstop=4
-se expandtab
+set expandtab
 " allow toggling between local and default mode
 function TabToggler()
   if &expandtab

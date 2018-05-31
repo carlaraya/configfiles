@@ -1,10 +1,11 @@
 [user]
 	name = carlaraya
-	email = carl_angelo.araya@upd.edu.ph
+	email = carl.araya256@gmail.com
 [alias]
     gr = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
     acp = "!f() { git add -A; git commit -m \"$1\"; git push -u origin HEAD;}; f" 
-    trackall = "!f() { for remote in `git branch -r `; do git branch --track $remote; done }; f"
+    trackall = "!f() { for remote in `git branch -r | grep -v /HEAD`; do git checkout --track $remote ; done }; f"
+
     lg = !"git lg2"
     lg1 = !"git lg1-specific --all"
     lg2 = !"git lg2-specific --all"

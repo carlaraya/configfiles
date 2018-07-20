@@ -13,3 +13,7 @@ mv ~/.gitignore_global ~/back.gitignore_global
 ln -sf $(pwd)/.gitconfig ~/.gitconfig
 ln -sf $(pwd)/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
+
+# stuff
+dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
+

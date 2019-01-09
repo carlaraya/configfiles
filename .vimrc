@@ -16,6 +16,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'digitaltoad/vim-pug.git'
+Plugin 'tomlion/vim-solidity'
 
 
 call vundle#end()

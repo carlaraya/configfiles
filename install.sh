@@ -1,4 +1,5 @@
 #!/bin/bash 
+sudo apt-get install vim-gtk git
 
 #vim
 mv ~/.vimrc ~/back.vimrc
@@ -17,3 +18,8 @@ git config --global core.excludesfile ~/.gitignore_global
 # stuff
 dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:escape']"
 
+chmod +x $(pwd)/*.sh
+# firefox lock
+ln -sf $(pwd)/OpenFox.sh ~/OpenFox.sh
+ln -sf $(pwd)/ReallyOpenFox.sh ~/ReallyOpenFox.sh
+cp $(pwd)/Fox.desktop ~/Desktop

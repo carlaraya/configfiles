@@ -1,3 +1,6 @@
+" stuff to run before loading plugins
+" let g:ale_completion_enabled = 1
+
 set nocompatible
 filetype off
 
@@ -17,6 +20,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'digitaltoad/vim-pug.git'
 Plugin 'tomlion/vim-solidity'
+Plugin 'dense-analysis/ale'
+
+
 
 
 call vundle#end()
@@ -243,3 +249,11 @@ nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " https://github.com/qpkorr/vim-bufkill
 nnoremap :BD <leader>bd
+
+" ESLINT
+let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'], 'javascript': ['prettier', 'eslint'] }
+
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow

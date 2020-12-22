@@ -24,7 +24,6 @@ Plugin 'dense-analysis/ale'
 
 
 
-
 call vundle#end()
 filetype plugin indent on 
 
@@ -165,7 +164,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_extensions = ['buffertag', 'tag', 'line', 'dir']
 let g:ctrlp_root_markers = ['Gemfile']
-set wildignore+=*/node_modules/*,*/tmp/*
+set wildignore+=*/node_modules/*,*/tmp/*,*/target/*,*/*.class
 
 " None of that
 set nohlsearch

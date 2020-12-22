@@ -5,3 +5,4 @@ a.out
 *.class
 *~
 node_modules
+.help
